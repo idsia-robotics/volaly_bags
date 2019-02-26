@@ -1,0 +1,6 @@
+<launch>
+  <arg name="prefix" default="volaly"/>
+  <arg name="subdir" default="."/>
+
+  <node name="bag" pkg="rosbag" type="record" args="-o $(find volaly_bags)/bags/$(arg subdir)/$(arg prefix) -j -a -x '(.*)/image(.*)'"/>
+</launch>
